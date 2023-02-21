@@ -3,13 +3,9 @@ from django.urls import path, include
 from rest_framework import routers
 from main_app import views
 
-
-router = routers.DefaultRouter()
-router.register('Product', views.ProductView, 'Product')
-
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('api/', include(router.urls)),
+   path('', include('main_app.urls')),
 ]
 
 

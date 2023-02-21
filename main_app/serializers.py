@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product
+from .models import Order
 
 """
     serialization(직렬화)은 컴퓨터 과학의 데이터 스토리지 문맥에서 
@@ -10,8 +10,9 @@ from .models import Product
     그리고 json 데이터는 어떻게 다시 클래스 인스턴스로 바뀌는지 정의를 하는 것이다
 """
 
-class ProductSerializer(serializers.ModelSerializer):
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
+        model = Order
         fields = '__all__'
+        # fields = ('id', 'orderID', 'orderItem', 'orderBudget', 'orderDate')
         
