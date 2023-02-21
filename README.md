@@ -35,3 +35,44 @@ $ virtualenv venv --python=python3.5
 # requirement.txt가 주어졌을 때
 (venv) $ pip install -r requirements.txt
 ```
+
+# Django Setup
+
+1. venv 가상환경이 설치되었다는 assumption하에 진행!
+
+```shell
+mkdir myProject
+cd myProject
+virtualenv venv
+source venv/bin/activate	// 가상환경 실행
+
+pip3 install django
+django-admin startproject backend .	// backend 폴더, manage.py 생성
+
+python3 manage.py startapp testapp
+```
+
+2. `backend/settings.py`
+
+```python
+INSTALLED_APPS = [
+    ...,
+    'testapp',
+]
+
+# 새로 생성한 app 추가
+```
+
+3. 아래 command 콘솔에 입력
+
+```shell
+python3 manage.py migrate
+python3 manage.py createsuperuser	// 관리자 계정 생성
+python3 manage.py runserver
+```
+
+4. `python3 manage.py runserver` 명령어 입력해서 서버 호스팅 시작!
+
+http://127.0.0.1:8000/ 에 접속 시 아래 화면이 뜨면 성공
+
+<img src="/backend/asset/image/server-initial-launch.png" alt="isolated" width="200"/>
