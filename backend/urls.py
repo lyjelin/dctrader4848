@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from testapp import views
+from main_app import views
 
 router = routers.DefaultRouter()
 router.register('Product', views.ProductView, 'Product')

@@ -76,3 +76,11 @@ python3 manage.py runserver
 http://127.0.0.1:8000/ 에 접속 시 아래 화면이 뜨면 성공
 
 <img src="/backend/asset/image/server-initial-launch.png" alt="isolated" width="200"/>
+
+# REST API
+
+HTTP method로 CRUD를 표현하는데, 여기서는:
+
+- `POST`: 데이터 등록 및 전송
+- `GET`: 데이터 조회
+- `DELETE`: 데이터 삭제
