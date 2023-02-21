@@ -246,3 +246,20 @@ $ python manage.py runserver
 ### Data `GET`, `POST`
 
 Content에서 json을 전달하면 데이터가 추가되고(POST), 확인할 수 있다(GET)
+
+# React (ft. Frontend)
+
+1. 리액트 폴더 생성
+
+```s
+# At root dir
+$ npm create react-app frontend
+```
+
+2. `frontend/package.json`에서 `proxy` 설정해주기
+
+> React에서 proxy를 설정함으로써 개발은 3000 port에서 실행, 서비스는 8000 port에서 실행하도록 한다. React에서 백엔드 서버로 API 요청 시 호출 할 때 발생 할 수 있는 CORS 관련 오류를 방지하기 위하여 Proxy를 설정해 준다. 8000 port에서 api를 받아올 수 있도록 설정하는 것이다
+
+3. CORS 관련 세팅하기
+
+> `CORS(Cross-Origin Resource Sharing)`는 클라이언트와 서버의 포트가 다른 상태에서 클라이언트 측에서 서버 측으로 무언가를 요청했을 때 브라우저가 보안상의 이유로 요청을 차단하는 문제다. React의 3000 port에서 Django의 8000 port로 요청했을 때 보안상의 이유로 차단되기 때문에 이를 해결해 줘야 한다
