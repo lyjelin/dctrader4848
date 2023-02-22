@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9k^nhxv-g&7mb$26m*!@vl6m$*86o@1jn6x6hitx3!zc-rq0_n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,9 +55,8 @@ MIDDLEWARE = [
 
 # CORS_ORIGIN_WHITELIST에 등록된 url에서의 접근만 허용 가능
 # localhost:3000으로부터 오는 요청 처리 가능
-# CORS_ORIGIN_WHITELIST = [
-#    'http://localhost:3000',
-#]
+CORS_ORIGIN_WHITELIST = ('http://127.0.0.1:3000', 'http://localhost:3000')
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
 
